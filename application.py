@@ -23,7 +23,7 @@ def homePage():
 def index():
     if request.method == 'POST':
         try:
-            DRIVER_PATH = r"chromedriver.exe"
+            DRIVER_PATH = r"C:\Users\Shivam\Desktop\filpcart\FlipKart_Selenium\chromedriver.exe"
 
             # Initialize the Chrome WebDriver
             driver = webdriver.Chrome(DRIVER_PATH)
@@ -90,7 +90,7 @@ def index():
                 writer.writerows(reviews)
 
                
-            client = pymongo.MongoClient("mongodb+srv://master:master123@atlascluster.w0iwrbk.mongodb.net/?retryWrites=true&w=majority")
+            client = pymongo.MongoClient("mongodb+srv://shivam:vishwakarma@cluster0.uqsd5vc.mongodb.net/")
             db = client['flipkart_scrap1']
             review_col = db['review_scrap_data']
             review_col.insert_many(reviews)
